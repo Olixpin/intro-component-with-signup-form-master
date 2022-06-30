@@ -39,6 +39,9 @@ function checkInputs() {
     setErrorFor(email, 'Email cannot be blank');
   } else if (!isEmail(emailValue)) {
     setErrorFor(email, 'Not a valid email');
+    // set placeholder to email
+    email.placeholder = 'email@example/com';
+
     return false;
   } else {
     setSuccessFor(email);
