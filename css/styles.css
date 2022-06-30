@@ -13,8 +13,9 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: hsl(0deg, 100%, 74%);
   background-image: url("/images/bg-intro-desktop.png");
+  background-color: hsl(0deg, 100%, 74%);
+  background-blend-mode: screen;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
