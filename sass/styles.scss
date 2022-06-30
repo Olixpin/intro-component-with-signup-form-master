@@ -7,8 +7,10 @@ body {
   font-family: $font-family-base;
   background: $primary-color;
   background-image: url('/images/bg-intro-desktop.png');
-  background-image: url('/images/bg-intro-desktop.png'),
-    linear-gradient($primary-color, $primary-color);
+  // background-image: url('/images/bg-intro-desktop.png'),
+  //   linear-gradient($primary-color, $primary-color);
+  // background-image: linear-gradient($primary-color, $primary-color),
+  //   url('/images/bg-intro-desktop.png');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -21,8 +23,8 @@ body {
 
   @media (max-width: 375px) {
     background-image: url('/images/bg-intro-mobile.png');
-    background-image: url('/images/bg-intro-mobile.png'),
-      linear-gradient($primary-color, $primary-color);
+    // background-image: url('/images/bg-intro-mobile.png'),
+    //   linear-gradient($primary-color, $primary-color);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

@@ -15,7 +15,6 @@ body {
   font-family: "Poppins", sans-serif;
   background: hsl(0deg, 100%, 74%);
   background-image: url("/images/bg-intro-desktop.png");
-  background-image: url("/images/bg-intro-desktop.png"), linear-gradient(hsl(0deg, 100%, 74%), hsl(0deg, 100%, 74%));
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -29,7 +28,6 @@ body {
 @media (max-width: 375px) {
   body {
     background-image: url("/images/bg-intro-mobile.png");
-    background-image: url("/images/bg-intro-mobile.png"), linear-gradient(hsl(0deg, 100%, 74%), hsl(0deg, 100%, 74%));
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
