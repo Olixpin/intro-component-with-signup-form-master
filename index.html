@@ -15,6 +15,108 @@
     <link rel="stylesheet" href="css/styles.css" />
 
     <title>Frontend Mentor | Intro component with sign up form</title>
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/cf44f28357.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__title">
+          Learn to code by <span>watching others</span>
+        </h1>
+        <p class="header__subtitle">
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </header>
+      <main class="main">
+        <p class="main__link--signup">
+          Try it free 7 days <span>then $20/mo. thereafter</span>
+        </p>
+        <form action="" id="form" class="form">
+          <div class="form__control success">
+            <label for="firstname" class="form__control--label"></label>
+            <input
+              type="text"
+              id="firstname"
+              name="firstname"
+              class="form__control--input"
+              placeholder="First Name"
+            />
+            <i class="fas fa-check-circle form__control--icon"></i>
+            <i class="fas fa-exclamation-circle form__control--icon"></i>
+            <small class="form__control--message"
+              >First name cannot be empty</small
+            >
+          </div>
+
+          <div class="form__control error">
+            <label for="lastname" class="form__control--label"></label>
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              class="form__control--input"
+              placeholder="Last Name"
+            />
+            <i class="fas fa-check-circle form__control--icon"></i>
+            <i class="fas fa-exclamation-circle form__control--icon"></i>
+            <small class="form__control--message"
+              >Last Name cannot be empty</small
+            >
+          </div>
+
+          <div class="form__control">
+            <label for="email" class="form__control--label"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form__control--input"
+              placeholder="Email Address"
+            />
+            <i class="fas fa-check-circle form__control--icon"></i>
+            <i
+              class="fas fa-exclamation-circle form__control--icon"
+              id="check"
+            ></i>
+            <small class="form__control--message"
+              >Looks like this is not an email</small
+            >
+          </div>
+
+          <div class="form__control">
+            <label for="password" class="form__control--label"></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form__control--input"
+              placeholder="Password"
+            />
+            <i class="fas fa-check-circle form__control--icon"></i>
+            <i class="fas fa-exclamation-circle form__control--icon"></i>
+            <small class="form__control--message"
+              >Password cannot be empty</small
+            >
+          </div>
+
+          <button type="submit" class="form__submit">
+            Claim your free trial
+          </button>
+
+          <p class="form__paragraph">
+            By clicking the button, you are agreeing to our
+            <a href="#">Terms</a> <span>and</span>
+            <a href="#">Services</a>
+          </p>
+        </form>
+      </main>
+    </div>
+  </body>
 </html>

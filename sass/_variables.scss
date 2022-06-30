@@ -1,1 +1,24 @@
-$primary-color: #0070f3;
+// Colors
+$primary-color: hsl(0, 100%, 74%);
+$secondary-color: hsl(154, 59%, 51%);
+$accent-color: hsl(248, 32%, 49%);
+$grey-color-dark: hsl(249, 10%, 26%);
+$grey-color-light: hsl(246, 25%, 77%);
+$text-color: hsl(0, 0%, 100%);
+
+// Font
+
+// Font Weights
+$font-weights: (
+  'regular': 400,
+  'medium': 500,
+  'medium-bold': 600,
+  'bold': 700,
+);
+
+// Weight Functions
+@function weights($weights) {
+  @each $weight in $weights {
+    @return $weight;
+  }
+}

@@ -1,2 +1,232 @@
-@import "base";
-@import "variables";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import 'base';
+@import 'variables';
+@import 'reset';
+
+body {
+  font-family: $font-family-base;
+  background: $primary-color;
+  background-image: url('/images/bg-intro-desktop.png');
+  background-image: url('/images/bg-intro-desktop.png'),
+    linear-gradient($primary-color, $primary-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+
+  @media (max-width: 375px) {
+    background-image: url('/images/bg-intro-mobile.png');
+    background-image: url('/images/bg-intro-mobile.png'),
+      linear-gradient($primary-color, $primary-color);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+  }
+}
+
+.container {
+  max-width: 144rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem;
+  padding: 0 25rem;
+  align-items: center;
+
+  @media (max-width: 375px) {
+    grid-template-columns: 1fr;
+    padding: 2rem !important;
+
+    margin-top: 3rem;
+  }
+
+  @media (max-width: 500px) {
+    padding: 4rem !important;
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: 1294px) {
+    padding: 0 15rem;
+  }
+
+  @media (max-width: 1100px) {
+    padding: 0 10rem;
+  }
+
+  @media (max-width: 935px) {
+    gap: 2rem;
+  }
+
+  @media (max-width: 769px) {
+    gap: 2rem;
+    padding: 0 5rem;
+  }
+
+  @media (max-width: 599px) {
+    padding: 0 2rem;
+  }
+}
+
+.header {
+  color: $text-color;
+
+  #{&}__title {
+    font-size: 4rem;
+    font-weight: weights(bold);
+    margin-bottom: 2rem;
+    line-height: 4rem;
+  }
+
+  @media (max-width: 375px) {
+    text-align: center;
+
+    #{&}__title {
+      font-size: 3rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+.main {
+  font-size: 1.2rem;
+  &__link--signup {
+    color: $text-color;
+    transition: all 0.3s ease-in-out;
+    background-color: $accent-color;
+    width: 100%;
+    padding: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 0rem rgba($grey-color-dark, 0.1);
+
+    span {
+      color: $grey-color-light;
+    }
+
+    @media (max-width: 375px) {
+      padding: 1rem 7rem;
+    }
+  }
+}
+
+.form {
+  background-color: #fff;
+  padding: 4rem;
+  display: grid;
+  gap: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+  box-shadow: 0 0.5rem 0rem rgba($grey-color-dark, 0.1);
+
+  @media (max-width: 375px) {
+    padding: 2rem;
+  }
+
+  @media (max-width: 650px) {
+    padding: 1rem;
+  }
+
+  &__control {
+    position: relative;
+
+    &.success input {
+      outline: thin solid $secondary-color;
+    }
+
+    &.error input {
+      outline: thin solid $primary-color;
+    }
+
+    &.success .fa-check-circle {
+      color: $secondary-color;
+      visibility: visible;
+    }
+
+    &.error .fa-exclamation-circle {
+      color: $primary-color;
+      visibility: visible;
+    }
+
+    &.error small {
+      visibility: visible;
+    }
+
+    &.success small {
+      visibility: hidden;
+    }
+
+    &--input {
+      width: 100%;
+      padding: 1.2rem;
+      border: 1px solid $grey-color-light;
+      border-radius: 0.5rem;
+      font-size: 1.4rem;
+      font-weight: weights(medium);
+      color: $grey-color-dark;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &--input:focus {
+      outline: thin solid $accent-color;
+    }
+
+    &--message {
+      color: $primary-color;
+      text-align: right;
+      width: 100%;
+      display: block;
+      visibility: hidden;
+    }
+
+    &--icon {
+      position: absolute;
+      font-size: 1.2rem;
+      right: 20px;
+      display: block;
+      right: 10px;
+      top: 15px;
+      visibility: hidden;
+    }
+  }
+
+  &__submit {
+    width: 100%;
+    display: block;
+    padding: 1.2rem;
+    text-align: center;
+    background-color: $secondary-color;
+    border: none;
+    color: $text-color;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  &__paragraph {
+    font-size: 0.9rem;
+    text-align: center;
+    color: lighten($grey-color-dark, 30%);
+    a {
+      color: $primary-color;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      font-weight: weights(bold);
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    span {
+      color: $primary-color;
+      font-weight: weights(bold);
+    }
+  }
+}
