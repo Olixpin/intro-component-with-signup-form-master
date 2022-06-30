@@ -15,16 +15,22 @@ function checkInputs() {
   const firstNameValue = firstName.value.trim();
   const lastNameValue = lastName.value.trim();
   const emailValue = email.value.trim();
-  // const passwordValue = password.value.trim();
+  const passwordValue = password.value.trim();
 
   if (firstNameValue === '') {
     setErrorFor(firstName, 'First name cannot be blank');
+  } else if (!isNaN(firstNameValue)) {
+    setErrorFor(firstName, 'First name cannot be a number');
+    return false;
   } else {
     setSuccessFor(firstName);
   }
 
   if (lastNameValue === '') {
     setErrorFor(lastName, 'Last name cannot be blank');
+  } else if (!isNaN(lastNameValue)) {
+    setErrorFor(lastName, 'Last name cannot be a number');
+    return false;
   } else {
     setSuccessFor(lastName);
   }
@@ -33,17 +39,53 @@ function checkInputs() {
     setErrorFor(email, 'Email cannot be blank');
   } else if (!isEmail(emailValue)) {
     setErrorFor(email, 'Not a valid email');
+    return false;
   } else {
     setSuccessFor(email);
   }
 
-  if (password.value === '') {
+  if (passwordValue === '') {
     setErrorFor(password, 'Password cannot be blank');
-  } else if (password.value.length < 6) {
+  } else if (passwordValue.length < 6) {
     setErrorFor(password, 'Password must be at least 6 characters');
+    return false;
   } else {
     setSuccessFor(password);
   }
+
+  if (
+    firstNameValue === '' ||
+    lastNameValue === '' ||
+    emailValue === '' ||
+    passwordValue === ''
+  ) {
+    return false;
+  }
+
+  //make popup visible
+  const popup = document.querySelector('.popup');
+  popup.classList.add('popup--visible');
+  console.log('Form Submitted successfully');
+
+  // Close popup button
+  const closePopup = document.querySelector('.popup__close');
+  closePopup.addEventListener('click', () => {
+    popup.classList.remove('popup--visible');
+
+    // Clear form
+    form.reset();
+    // Clear all errors
+
+    if (firstName.parentElement.classList.contains('success')) {
+      firstName.parentElement.classList.remove('success');
+    }
+    const formControls = document.querySelectorAll('.form__control');
+    formControls.forEach(element => {
+      element.className = 'form__control';
+    });
+  });
+
+  return true;
 }
 
 function setSuccessFor(input) {
