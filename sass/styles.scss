@@ -5,7 +5,7 @@
 
 body {
   font-family: $font-family-base;
-  background-image: url('/images/bg-intro-desktop.png');
+  background-image: url('../images/bg-intro-desktop.png');
   background-color: $primary-color;
   background-blend-mode: screen;
   background-repeat: no-repeat;
@@ -19,7 +19,7 @@ body {
   position: relative;
 
   @media (max-width: 375px) {
-    background-image: url('/images/bg-intro-mobile.png');
+    background-image: url('../images/bg-intro-mobile.png');
   }
 }
 
